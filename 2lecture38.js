@@ -1,34 +1,35 @@
-// genrete a randeo color
-
- const randomColor =  function(){
-    const hex = "0123456789ABCDEF";
-    let  color  = "#";
-    for (let i = 0; i < 6; i++) {
-       
-        color += hex[Math.floor(Math.random() * 16)];
+//  2lecture38.js
+const randomColor =  function () {
+    const hex = '0123456789ABCDEF'
+    let color = "#"
+    for (let i = 0; i <6; i++) {
+        color += hex[Math.floor(Math.random() *16)]
     }
-    return color;
+   return color
 }
- const body =   document.querySelector('body')
+//  console.log(Math.floor(Math.random() *16))
+
+const body = document.querySelector('body')
 
 
- const startChengingColor = function  () {
-   var intervalId =   setInterval(changBgColor , 1000);
 
-     
-     function  changBgColor(){
-         body.style.backgroundColor = randomColor();
+const startchegingColor =   function(){
+    let setIntervalId =   setInterval(chngeBgColor , 1000)
+    
+      function  chngeBgColor(){
 
-     }
- };
- const stopChengingColor = function(){
-  clearInterval(intervalId);
+    body.style.backgroundColor = randomColor()
 
- }
+  }
+}
+
+const  stopchegingColor = function(){
+    clearInterval(setIntervalId)
+} 
+
+ const start =  document.querySelector("#start")
+ start.addEventListener('click' , startchegingColor)
 
 
- const start = document.querySelector('#start')
-start.addEventListener('click' , startChengingColor)
-
-const stop = document.querySelector('#stop')
-start.addEventListener('click' , stopChengingColor)
+const stop  = document.querySelector("stop")
+stop.addEventListener('click' , stopchigingColor)
